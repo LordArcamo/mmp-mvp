@@ -1,0 +1,372 @@
+---
+---
+<section class="contact" id="contact">
+  <div class="contact-inner">
+
+    <!-- Left: contact info -->
+    <div class="contact-left">
+      <span class="section-eyebrow reveal from-left">
+        <i class="fi fi-rr-comment-alt"></i>
+        Get In Touch
+      </span>
+
+      <h2 class="section-heading reveal">
+        Visit Us or<br />
+        <span class="red">Give Us a Call</span>
+      </h2>
+
+      <p class="contact-sub reveal delay-2">
+        Have questions about a product? Want to check availability or learn about our
+        installment options? We're happy to help!
+      </p>
+
+      <div class="contact-items">
+
+        <div class="contact-item reveal delay-1">
+          <div class="contact-icon">
+            <i class="fi fi-sr-map-marker"></i>
+          </div>
+          <div class="contact-details">
+            <span class="contact-label">Location</span>
+            <strong>1st Floor Red-C Building</strong>
+            <span>Tambo Highway, Iligan City</span>
+            <span>Northern Mindanao, Philippines</span>
+          </div>
+        </div>
+
+        <div class="contact-item reveal delay-2">
+          <div class="contact-icon">
+            <i class="fi fi-sr-phone-call"></i>
+          </div>
+          <div class="contact-details">
+            <span class="contact-label">Phone / Mobile</span>
+            <strong>0993</strong>
+            <strong>09654239833</strong>
+            <span>Call or text anytime</span>
+          </div>
+        </div>
+
+        <div class="contact-item reveal delay-3">
+          <div class="contact-icon">
+            <i class="fi fi-br-facebook"></i>
+          </div>
+          <div class="contact-details">
+            <span class="contact-label">Facebook Page</span>
+            <strong>MMP Marketing</strong>
+            <a
+              href="https://www.facebook.com/mmp.iligan"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="fb-link"
+            >
+              facebook.com/mmp.iligan
+              <i class="fi fi-rr-arrow-small-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-item reveal delay-4">
+          <div class="contact-icon">
+            <i class="fi fi-sr-clock"></i>
+          </div>
+          <div class="contact-details">
+            <span class="contact-label">Store Hours</span>
+            <strong>Monday – Saturday</strong>
+            <span>8:00 AM – 6:00 PM</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Right: map card -->
+    <div class="contact-right reveal from-right delay-2">
+      <div class="map-card">
+        <!-- Live Google Maps embed -->
+        <iframe
+          class="map-iframe"
+          src="https://maps.google.com/maps?q=Tambo+Highway+Iligan+City+Philippines&t=&z=15&ie=UTF8&iwloc=&output=embed"
+          allowfullscreen
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="MMP Appliances Trading location"
+        ></iframe>
+        <!-- Overlay bar: store info + directions button -->
+        <div class="map-overlay">
+          <div class="map-overlay-info">
+            <i class="fi fi-sr-map-marker"></i>
+            <div>
+              <span class="map-name">MMP Appliances Trading</span>
+              <span class="map-addr">Tambo Highway, Iligan City</span>
+            </div>
+          </div>
+          <a
+            href="https://maps.google.com/?q=Tambo+Highway+Iligan+City+Philippines"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="map-btn"
+          >
+            <i class="fi fi-rr-map-marker"></i>
+            Directions
+          </a>
+        </div>
+        <!-- Corner accents -->
+        <div class="map-corner tl"></div>
+        <div class="map-corner tr"></div>
+        <div class="map-corner bl"></div>
+        <div class="map-corner br"></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="contact-watermark" aria-hidden="true">CONTACT</div>
+</section>
+
+<style>
+  .contact {
+    padding: 8rem 2.5rem;
+    background: var(--bg);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .contact-watermark {
+    position: absolute;
+    top: -2%;
+    left: -1%;
+    font-family: var(--font-logo);
+    font-size: clamp(5rem, 15vw, 13rem);
+    color: rgba(11,20,36,0.04);
+    pointer-events: none;
+    white-space: nowrap;
+    letter-spacing: 8px;
+  }
+
+  .contact-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+    position: relative;
+    z-index: 1;
+  }
+
+  .contact-sub {
+    color: var(--ink-mid);
+    font-size: 0.95rem;
+    font-weight: 400;
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+    max-width: 420px;
+  }
+
+  /* Contact items */
+  .contact-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .contact-item {
+    display: flex;
+    gap: 1.2rem;
+    align-items: flex-start;
+    padding: 1.4rem 1.5rem;
+    background: var(--bg-soft);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    box-shadow: 0 2px 12px rgba(11,20,36,0.06);
+    transition: border-color 0.3s;
+  }
+
+  .contact-item:hover {
+    border-color: rgba(200, 16, 46, 0.3);
+  }
+
+  .contact-icon {
+    width: 44px;
+    height: 44px;
+    background: var(--red-light);
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .contact-icon i {
+    font-size: 1.15rem;
+    color: var(--red);
+  }
+
+  .contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.12rem;
+  }
+
+  .contact-label {
+    font-family: var(--font-condensed);
+    font-size: 0.63rem;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--red);
+    font-weight: 700;
+    margin-bottom: 0.2rem;
+  }
+
+  .contact-details strong {
+    font-size: 0.9rem;
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  .contact-details span {
+    font-size: 0.82rem;
+    color: var(--ink-mid);
+    font-weight: 400;
+  }
+
+  .fb-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.82rem;
+    color: #1877F2;
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.2s;
+    margin-top: 0.1rem;
+  }
+
+  .fb-link:hover { color: #0d5fd4; }
+  .fb-link i { font-size: 0.8rem; }
+
+  /* ── Map card ── */
+  .contact-right {
+    position: sticky;
+    top: 6rem;
+  }
+
+  .map-card {
+    width: 100%;
+    aspect-ratio: 3/4;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(11,20,36,0.06);
+  }
+
+  .map-iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+  }
+
+  /* Info + directions bar pinned to bottom of map */
+  .map-overlay {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.85rem 1.1rem;
+    background: rgba(255,255,255,0.97);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid var(--border);
+    flex-wrap: wrap;
+  }
+
+  .map-overlay-info {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .map-overlay-info i {
+    color: var(--red);
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+
+  .map-overlay-info > div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.05rem;
+  }
+
+  .map-name {
+    font-family: var(--font-condensed);
+    font-size: 0.88rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--ink);
+    text-transform: uppercase;
+  }
+
+  .map-addr {
+    font-size: 0.75rem;
+    color: var(--ink-light);
+    font-weight: 400;
+  }
+
+  .map-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.55rem 1.1rem;
+    background: var(--red);
+    color: #FFFFFF;
+    text-decoration: none;
+    font-family: var(--font-condensed);
+    font-weight: 700;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-radius: 2px;
+    white-space: nowrap;
+    transition: background 0.3s, box-shadow 0.3s, transform 0.2s;
+  }
+
+  .map-btn:hover {
+    background: var(--red-dark);
+    box-shadow: 0 6px 20px var(--red-glow);
+    transform: translateY(-1px);
+  }
+
+  .map-btn i { font-size: 0.8rem; }
+
+  /* Corner brackets */
+  .map-corner {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border-color: var(--red);
+    border-style: solid;
+    border-width: 0;
+    opacity: 0.5;
+  }
+  .map-corner.tl { top: 14px; left: 14px; border-top-width: 2px; border-left-width: 2px; }
+  .map-corner.tr { top: 14px; right: 14px; border-top-width: 2px; border-right-width: 2px; }
+  .map-corner.bl { bottom: 14px; left: 14px; border-bottom-width: 2px; border-left-width: 2px; }
+  .map-corner.br { bottom: 14px; right: 14px; border-bottom-width: 2px; border-right-width: 2px; }
+
+  @media (max-width: 900px) {
+    .contact-inner {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+    .contact-right { position: static; }
+    .map-card { aspect-ratio: 4/3; }
+  }
+</style>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Background -->
+  <rect width="32" height="32" rx="5" fill="#0B1424"/>
+  <!-- Red accent bar -->
+  <rect x="4" y="25.5" width="24" height="2.5" rx="1" fill="#C8102E"/>
+  <!-- M M P letters -->
+  <text
+    x="16" y="22"
+    text-anchor="middle"
+    font-family="'Arial Black', 'Arial Bold', Arial, sans-serif"
+    font-weight="900"
+    font-size="13.5"
+    letter-spacing="-0.5"
+  ><tspan fill="#ffffff">M</tspan><tspan fill="#C8102E">M</tspan><tspan fill="#ffffff">P</tspan></text>
+</svg>

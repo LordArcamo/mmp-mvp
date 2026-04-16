@@ -1,0 +1,309 @@
+---
+const services = [
+  {
+    icon: "fi fi-sr-shop",
+    title: "In-Store Shopping",
+    desc: "Browse our wide selection of appliances in our Tambo Highway showroom. See, touch, and compare before you buy.",
+    tag: "Walk-in"
+  },
+  {
+    icon: "fi fi-sr-credit-card",
+    title: "0% Installment Plans",
+    desc: "Get your dream appliances today with zero downpayment via BILLEASE flexible financing options.",
+    tag: "BILLEASE"
+  },
+  {
+    icon: "fi fi-sr-truck-side",
+    title: "Delivery Service",
+    desc: "We deliver right to your doorstep within Iligan City. Safe, fast, and hassle-free.",
+    tag: "Iligan Area"
+  },
+  {
+    icon: "fi fi-sr-headset",
+    title: "After-Sales Support",
+    desc: "Our team is here to assist with warranty claims, product inquiries, and technical support after your purchase.",
+    tag: "Customer Care"
+  },
+  {
+    icon: "fi fi-sr-tags",
+    title: "Best Price Guarantee",
+    desc: "We offer competitive pricing on all our products. Get quality appliances without breaking the bank.",
+    tag: "Competitive Prices"
+  },
+  {
+    icon: "fi fi-sr-shield-check",
+    title: "Warranty Protection",
+    desc: "All products come with manufacturer warranties, giving you peace of mind with every purchase.",
+    tag: "Guaranteed"
+  },
+];
+---
+
+<section class="services" id="services">
+  <div class="services-inner">
+
+    <div class="services-header">
+      <span class="section-eyebrow reveal from-left">
+        <i class="fi fi-rr-star"></i>
+        What We Offer
+      </span>
+      <h2 class="section-heading reveal">
+        More Than Just<br />
+        <span class="red">Appliances</span>
+      </h2>
+    </div>
+
+    <div class="services-grid">
+      {services.map((s, i) => (
+        <div class={`service-card reveal delay-${(i % 3) + 1}`}>
+          <div class="service-icon-wrap">
+            <i class={s.icon}></i>
+          </div>
+          <span class="service-tag">{s.tag}</span>
+          <h3 class="service-title">{s.title}</h3>
+          <p class="service-desc">{s.desc}</p>
+          <div class="service-arrow">
+            <i class="fi fi-rr-arrow-right"></i>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- CTA Banner -->
+    <div class="services-cta reveal scale-up">
+      <div class="cta-glow"></div>
+      <div class="cta-content">
+        <span class="cta-eyebrow">
+          <i class="fi fi-sr-badge-percent"></i>
+          Special Offer
+        </span>
+        <h3 class="cta-title">0 Downpayment on Select Items</h3>
+        <p class="cta-desc">Apply for BILLEASE installment in minutes. Get approved and take your appliance home today.</p>
+        <a href="#contact" class="cta-btn">
+          <i class="fi fi-rr-phone-call"></i>
+          Inquire Now
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="services-watermark" aria-hidden="true">SERVICES</div>
+</section>
+
+<style>
+  .services {
+    padding: 8rem 2.5rem;
+    background: var(--bg);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .services-watermark {
+    position: absolute;
+    bottom: -4%;
+    right: -1%;
+    font-family: var(--font-logo);
+    font-size: clamp(5rem, 15vw, 13rem);
+    color: rgba(11,20,36,0.04);
+    pointer-events: none;
+    white-space: nowrap;
+    letter-spacing: 8px;
+  }
+
+  .services-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .services-header {
+    margin-bottom: 3.5rem;
+  }
+
+  /* Grid */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .service-card {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(11,20,36,0.06);
+    transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  }
+
+  .service-card:hover {
+    border-color: rgba(200, 16, 46, 0.3);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(11,20,36,0.1);
+  }
+
+  .service-icon-wrap {
+    width: 52px;
+    height: 52px;
+    background: var(--red-light);
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    transition: background 0.3s;
+  }
+
+  .service-card:hover .service-icon-wrap {
+    background: rgba(200, 16, 46, 0.15);
+  }
+
+  .service-icon-wrap i {
+    font-size: 1.4rem;
+    color: var(--red);
+  }
+
+  .service-tag {
+    font-family: var(--font-condensed);
+    font-size: 0.63rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--red);
+    font-weight: 700;
+    display: block;
+    margin-bottom: 0.4rem;
+  }
+
+  .service-title {
+    font-family: var(--font-condensed);
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--ink);
+    margin-bottom: 0.7rem;
+  }
+
+  .service-desc {
+    font-size: 0.85rem;
+    color: var(--ink-mid);
+    font-weight: 400;
+    line-height: 1.7;
+    padding-bottom: 2rem;
+  }
+
+  .service-arrow {
+    position: absolute;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid var(--border-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: translateX(-6px);
+    transition: opacity 0.3s, transform 0.3s;
+  }
+
+  .service-arrow i { font-size: 0.75rem; color: var(--red); }
+
+  .service-card:hover .service-arrow {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* CTA Banner */
+  .services-cta {
+    background: var(--navy);
+    border: 1px solid rgba(200, 16, 46, 0.25);
+    border-radius: 4px;
+    padding: 3rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(11,20,36,0.06);
+  }
+
+  .cta-glow {
+    position: absolute;
+    top: -60%;
+    left: -5%;
+    width: 450px;
+    height: 350px;
+    background: radial-gradient(ellipse, rgba(200,16,46,0.15), transparent 70%);
+    pointer-events: none;
+  }
+
+  .cta-content { position: relative; z-index: 1; }
+
+  .cta-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: var(--font-condensed);
+    font-size: 0.72rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--red);
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+  }
+  .cta-eyebrow i { font-size: 0.85rem; }
+
+  .cta-title {
+    font-family: var(--font-logo);
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    letter-spacing: 2px;
+    color: #FFFFFF;
+    margin-bottom: 0.6rem;
+  }
+
+  .cta-desc {
+    color: rgba(255,255,255,0.65);
+    font-size: 0.9rem;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+    max-width: 500px;
+    line-height: 1.7;
+  }
+
+  .cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.85rem 2rem;
+    background: var(--red);
+    color: #FFFFFF;
+    text-decoration: none;
+    font-family: var(--font-condensed);
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-radius: 2px;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+  }
+
+  .cta-btn:hover {
+    background: var(--red-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px var(--red-glow);
+  }
+
+  .cta-btn i { font-size: 0.9rem; }
+
+  @media (max-width: 900px) {
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 600px) {
+    .services-grid { grid-template-columns: 1fr; }
+    .services-cta { padding: 2rem; }
+  }
+</style>

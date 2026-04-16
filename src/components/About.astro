@@ -1,0 +1,373 @@
+---
+---
+<section class="about" id="about">
+  <div class="about-inner">
+
+    <!-- ── LEFT: photo composition ── -->
+    <div class="about-visual reveal from-left">
+
+      <!-- Main photo -->
+      <div class="photo-main">
+        <img
+          src="https://images.unsplash.com/photo-1571175443880-49e1d25b2bc5?auto=format&fit=crop&w=900&q=85"
+          alt="Quality home appliances"
+          loading="lazy"
+        />
+        <div class="photo-main-overlay"></div>
+      </div>
+
+      <!-- Secondary photo — overlaps bottom-right of main -->
+      <div class="photo-secondary reveal delay-2">
+        <img
+          src="https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?auto=format&fit=crop&w=500&q=80"
+          alt="Washing machine"
+          loading="lazy"
+        />
+      </div>
+
+      <!-- Floating: years badge -->
+      <div class="badge-years reveal delay-3">
+        <span class="by-num">MMP</span>
+        <span class="by-label">Trusted Store</span>
+      </div>
+
+      <!-- Floating: location pill -->
+      <div class="badge-location reveal delay-4">
+        <i class="fi fi-sr-map-marker"></i>
+        <span>Tambo Highway · Iligan City</span>
+      </div>
+
+    </div>
+
+    <!-- ── RIGHT: text ── -->
+    <div class="about-text-col">
+
+      <span class="section-eyebrow reveal from-right">
+        <i class="fi fi-rr-info"></i>
+        Who We Are
+      </span>
+
+      <h2 class="section-heading reveal">
+        Bringing the Best<br />
+        <span class="red">Home to Iligan</span>
+      </h2>
+
+      <p class="about-body reveal delay-2">
+        MMP Appliances Trading is a trusted home appliance store serving Iligan City
+        and nearby communities. Located at the 1st Floor of the Red-C Building along
+        Tambo Highway, we make quality living accessible to every family.
+      </p>
+
+      <p class="about-body reveal delay-3">
+        We carry a handpicked selection from the world's most trusted brands — from
+        air conditioners and refrigerators to audio systems and televisions. With
+        flexible financing through <strong>Billease, Tonik, Salmon, and Skyro</strong>,
+        you can take your dream appliance home today with zero downpayment.
+      </p>
+
+      <!-- 2×2 highlight grid -->
+      <div class="about-highlights reveal delay-4">
+        <div class="hl-item">
+          <div class="hl-icon"><i class="fi fi-sr-boxes"></i></div>
+          <div class="hl-text">
+            <strong>8+ Brands</strong>
+            <span>Globally trusted names</span>
+          </div>
+        </div>
+        <div class="hl-item">
+          <div class="hl-icon"><i class="fi fi-sr-credit-card"></i></div>
+          <div class="hl-text">
+            <strong>₱0 Downpayment</strong>
+            <span>Via Billease & more</span>
+          </div>
+        </div>
+        <div class="hl-item">
+          <div class="hl-icon"><i class="fi fi-sr-truck-side"></i></div>
+          <div class="hl-text">
+            <strong>Free Delivery</strong>
+            <span>Within Iligan City</span>
+          </div>
+        </div>
+        <div class="hl-item">
+          <div class="hl-icon"><i class="fi fi-sr-shield-check"></i></div>
+          <div class="hl-text">
+            <strong>Warranty</strong>
+            <span>On all products</span>
+          </div>
+        </div>
+      </div>
+
+      <a href="#contact" class="about-cta reveal delay-5">
+        <i class="fi fi-rr-map-marker"></i>
+        Visit Our Store
+        <i class="fi fi-rr-arrow-right cta-arrow"></i>
+      </a>
+    </div>
+
+  </div>
+
+  <div class="about-watermark" aria-hidden="true">ABOUT</div>
+</section>
+
+<style>
+  .about {
+    padding: 8rem 2.5rem;
+    background: var(--bg-soft);
+    position: relative;
+    overflow: clip;
+  }
+
+  .about-watermark {
+    position: absolute;
+    bottom: -4%; right: -1%;
+    font-family: var(--font-logo);
+    font-size: clamp(6rem, 18vw, 16rem);
+    color: rgba(11,20,36,0.04);
+    pointer-events: none;
+    letter-spacing: 10px;
+    white-space: nowrap;
+  }
+
+  .about-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ══════════════════════════
+     LEFT — photo composition
+  ══════════════════════════ */
+  .about-visual {
+    position: relative;
+    /* enough padding so secondary + badges don't clip */
+    padding-bottom: 5rem;
+    padding-right: 3.5rem;
+  }
+
+  /* Main photo */
+  .photo-main {
+    position: relative;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 24px 60px rgba(11,20,36,0.18);
+    aspect-ratio: 4/3;
+  }
+
+  .photo-main img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: transform 0.8s ease;
+  }
+
+  .photo-main:hover img { transform: scale(1.04); }
+
+  /* Red bottom-left accent bar */
+  .photo-main-overlay {
+    position: absolute; bottom: 0; left: 0;
+    width: 60px; height: 4px;
+    background: var(--red);
+    border-radius: 0 2px 0 0;
+  }
+
+  /* Secondary photo — bottom-right, overlapping */
+  .photo-secondary {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 52%;
+    aspect-ratio: 4/3;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 4px solid var(--bg-soft);
+    box-shadow: 0 16px 40px rgba(11,20,36,0.2);
+  }
+
+  .photo-secondary img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.8s ease;
+  }
+
+  .photo-secondary:hover img { transform: scale(1.06); }
+
+  /* Floating badge — top-left of main photo */
+  .badge-years {
+    position: absolute;
+    top: 1.2rem;
+    left: 1.2rem;
+    background: var(--navy);
+    border-radius: 6px;
+    padding: 0.9rem 1.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.1rem;
+    box-shadow: 0 12px 32px rgba(11,20,36,0.22);
+    border: 1px solid rgba(255,255,255,0.06);
+    z-index: 4;
+  }
+
+  .by-num {
+    font-family: var(--font-logo);
+    font-size: 1.4rem;
+    color: #fff;
+    line-height: 1;
+    letter-spacing: 3px;
+  }
+
+  .by-num .accent { color: var(--red); }
+
+  .by-label {
+    font-family: var(--font-condensed);
+    font-size: 0.55rem;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  /* Location pill — bottom-left of visual composition */
+  .badge-location {
+    position: absolute;
+    bottom: 1.6rem;
+    left: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    background: rgba(255,255,255,0.97);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    padding: 0.45rem 0.9rem;
+    box-shadow: 0 6px 20px rgba(11,20,36,0.12);
+    font-family: var(--font-condensed);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    color: var(--ink-mid);
+    white-space: nowrap;
+    z-index: 4;
+  }
+
+  .badge-location i { color: var(--red); font-size: 0.8rem; }
+
+  /* ══════════════════════════
+     RIGHT — text column
+  ══════════════════════════ */
+  .about-body {
+    color: var(--ink-mid);
+    font-size: 0.95rem;
+    line-height: 1.85;
+    margin-bottom: 1rem;
+    font-weight: 400;
+  }
+
+  .about-body strong { color: var(--ink); font-weight: 600; }
+
+  /* 2×2 highlight grid */
+  .about-highlights {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.85rem;
+    margin: 1.6rem 0 2rem;
+  }
+
+  .hl-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.9rem 1rem;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+  }
+
+  .hl-item:hover {
+    border-color: rgba(200,16,46,0.25);
+    box-shadow: 0 4px 16px rgba(11,20,36,0.07);
+    transform: translateY(-2px);
+  }
+
+  .hl-icon {
+    width: 36px; height: 36px;
+    background: var(--red-light);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: background 0.25s;
+  }
+
+  .hl-item:hover .hl-icon { background: rgba(200,16,46,0.14); }
+  .hl-icon i { font-size: 1rem; color: var(--red); }
+
+  .hl-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+  }
+
+  .hl-text strong {
+    font-family: var(--font-condensed);
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    color: var(--ink);
+  }
+
+  .hl-text span {
+    font-size: 0.75rem;
+    color: var(--ink-light);
+    font-weight: 400;
+  }
+
+  /* CTA */
+  .about-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: var(--font-condensed);
+    font-weight: 700;
+    font-size: 0.88rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff;
+    background: var(--red);
+    padding: 0.85rem 1.8rem;
+    border-radius: 2px;
+    border: 2px solid var(--red);
+    transition: all 0.28s ease;
+  }
+
+  .about-cta:hover {
+    background: var(--red-dark);
+    border-color: var(--red-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px var(--red-glow);
+  }
+
+  .cta-arrow { transition: transform 0.2s; }
+  .about-cta:hover .cta-arrow { transform: translateX(4px); }
+
+  /* ── Responsive ── */
+  @media (max-width: 900px) {
+    .about-inner { grid-template-columns: 1fr; gap: 3rem; }
+    .about-visual { padding-bottom: 4.5rem; padding-right: 2.5rem; }
+  }
+
+  @media (max-width: 540px) {
+    .about-highlights { grid-template-columns: 1fr; }
+    .photo-secondary { width: 48%; }
+  }
+</style>

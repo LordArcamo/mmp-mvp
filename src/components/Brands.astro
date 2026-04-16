@@ -1,0 +1,238 @@
+---
+const brands = [
+  { name:"Samsung",   tagline:"Do What You Can't",         category:"Electronics & Appliances", logo:"/brands/samsung.svg",   color:"#1428A0" },
+  { name:"Haier",     tagline:"Inspired Living",            category:"Home Appliances",           logo:"/brands/haier.svg",     color:"#0057A8" },
+  { name:"Midea",     tagline:"Leading Technology",         category:"Home Appliances",           logo:"/brands/midea.svg",     color:"#EF4123" },
+  { name:"Panasonic", tagline:"A Better Life, A Better World", category:"Electronics",            logo:"/brands/panasonic.svg", color:"#003087" },
+  { name:"Fujidenzo", tagline:"Cool & Efficient",           category:"Home Appliances",           logo:"/brands/fujidenzo.svg", color:"#C8102E" },
+  { name:"Xastron",   tagline:"Quality Electronics",        category:"Audio & Electronics",       logo:"/brands/xastron.svg",   color:"#1A3A6B" },
+  { name:"N-Vision",  tagline:"Clear Picture, Clear Sound", category:"Displays & TV",             logo:"/brands/nvision.svg",   color:"#0B4D8A" },
+  { name:"dB Audio",  tagline:"Dynasty Amplifier",          category:"Audio Systems",             logo:"/brands/dbaudio.svg",   color:"#8B1A1A" },
+];
+---
+
+<section class="brands" id="brands">
+  <div class="brands-inner">
+
+    <div class="brands-header">
+      <span class="section-eyebrow reveal from-left">
+        <i class="fi fi-sr-boxes"></i>
+        Our Brand Partners
+      </span>
+      <div class="brands-header-row">
+        <h2 class="section-heading reveal">
+          World-Class Brands<br />
+          <span class="red">In One Store</span>
+        </h2>
+        <p class="brands-desc reveal from-right delay-2">
+          We carry only the most trusted names in home appliances —
+          giving you quality, reliability, and value in every purchase.
+        </p>
+      </div>
+    </div>
+
+    <div class="brands-grid">
+      {brands.map((b, i) => (
+        <div class={`brand-card reveal delay-${(i % 4) + 1}`}>
+          <div class="brand-bar" style={`background: ${b.color}`}></div>
+          <div class="brand-logo-area">
+            <img
+              src={b.logo}
+              alt={`${b.name} logo`}
+              class="brand-logo-img"
+              loading="lazy"
+            />
+          </div>
+          <div class="brand-info">
+            <span class="brand-cat">{b.category}</span>
+            <h3 class="brand-name">{b.name}</h3>
+            <p class="brand-tagline">{b.tagline}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Running ticker -->
+    <div class="brand-ticker reveal">
+      <div class="ticker-track">
+        {[...brands,...brands,...brands].map(b => (
+          <span class="ticker-item">
+            <span class="ticker-dot"></span>
+            {b.name}
+          </span>
+        ))}
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .brands {
+    padding: 8rem 2.5rem;
+    background: var(--bg);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .brands-inner { max-width: 1200px; margin: 0 auto; }
+
+  .brands-header { margin-bottom: 3.5rem; }
+
+  .brands-header-row {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 3rem;
+    flex-wrap: wrap;
+  }
+
+  .brands-desc {
+    max-width: 380px;
+    font-size: 0.92rem;
+    color: var(--ink-mid);
+    font-weight: 400;
+    line-height: 1.8;
+    padding-bottom: 0.5rem;
+  }
+
+  /* ── Grid ── */
+  .brands-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin-bottom: 0;
+  }
+
+  .brand-card {
+    background: var(--bg);
+    padding: 2rem 1.6rem;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    cursor: default;
+    min-height: 200px;
+  }
+
+  .brand-card:hover {
+    background: var(--bg-soft);
+    z-index: 2;
+    box-shadow: 0 4px 24px rgba(11,20,36,0.08);
+  }
+
+  /* Top bar animates in on hover */
+  .brand-bar {
+    position: absolute; top:0; left:0; right:0; height:3px;
+    transform: scaleX(0); transform-origin: left;
+    transition: transform 0.4s cubic-bezier(0.16,1,0.3,1);
+  }
+  .brand-card:hover .brand-bar { transform: scaleX(1); }
+
+  /* Logo */
+  .brand-logo-area {
+    flex:1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 70px;
+    padding: 0.5rem 0;
+  }
+
+  .brand-logo-img {
+    max-width: 130px;
+    max-height: 52px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    /* Start faded on light bg, show colour on hover */
+    filter: grayscale(1) opacity(0.4);
+    transition: opacity 0.35s, filter 0.35s;
+  }
+
+  .brand-card:hover .brand-logo-img {
+    filter: none;
+  }
+
+  /* Info */
+  .brand-info {
+    border-top: 1px solid var(--border);
+    padding-top: 0.9rem;
+  }
+
+  .brand-cat {
+    display: block;
+    font-family: var(--font-condensed);
+    font-size: 0.6rem;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--red);
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+  }
+
+  .brand-name {
+    font-family: var(--font-condensed);
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--ink);
+    margin-bottom: 0.2rem;
+  }
+
+  .brand-tagline {
+    font-size: 0.73rem;
+    color: var(--ink-light);
+    font-weight: 400;
+    line-height: 1.4;
+  }
+
+  /* Ticker */
+  .brand-ticker {
+    overflow: hidden;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 0;
+  }
+
+  .ticker-track {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    white-space: nowrap;
+    width: max-content;
+    animation: ticker 28s linear infinite;
+  }
+
+  .ticker-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-logo);
+    font-size: 1rem;
+    color: rgba(11,20,36,0.1);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+  }
+  .ticker-item:nth-child(even) { color: rgba(200,16,46,0.15); }
+
+  .ticker-dot { width:4px; height:4px; background:rgba(200,16,46,0.35); border-radius:50%; flex-shrink:0; }
+
+  @keyframes ticker {
+    from { transform:translateX(0); }
+    to   { transform:translateX(-33.333%); }
+  }
+
+  @media (max-width:900px) {
+    .brands-grid { grid-template-columns:repeat(2,1fr); }
+    .brands-header-row { flex-direction:column; gap:1rem; align-items:flex-start; }
+  }
+  @media (max-width:480px) {
+    .brand-card { padding:1.5rem 1rem; }
+  }
+</style>

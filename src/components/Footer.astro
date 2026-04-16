@@ -1,0 +1,379 @@
+---
+const brands = ["Samsung","Haier","Midea","Panasonic","Fujidenzo","Xastron","N-Vision","dB Audio"];
+const links  = [
+  { label:"Home",     href:"#home" },
+  { label:"About",    href:"#about" },
+  { label:"Brands",   href:"#brands" },
+  { label:"Posts",    href:"#posts" },
+  { label:"Services", href:"#services" },
+  { label:"Contact",  href:"#contact" },
+];
+---
+
+<footer class="footer">
+
+  <!-- Transition: white Contact section → navy footer -->
+  <div class="footer-wave">
+    <svg viewBox="0 0 1440 72" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0 72 L0 36 Q360 0 720 36 Q1080 72 1440 36 L1440 72 Z" fill="#0B1424"/>
+    </svg>
+  </div>
+
+  <div class="footer-body">
+
+    <!-- Red top accent line -->
+    <div class="footer-accent"></div>
+
+    <div class="footer-inner">
+
+      <!-- Brand column -->
+      <div class="fc-brand">
+        <div class="footer-logo">
+          <span class="mmp-mark fl-mark">
+            <span class="l1">M</span><span class="l2">M</span><span class="l3">P</span>
+          </span>
+          <div class="footer-logo-text">
+            <span class="flt-top">APPLIANCES</span>
+            <span class="flt-bottom">TRADING</span>
+          </div>
+        </div>
+        <p class="footer-desc">
+          Your trusted home appliance store in Iligan City.
+          Quality brands, competitive prices, and flexible
+          installment options to fit every budget.
+        </p>
+        <a
+          href="https://www.facebook.com/mmp.iligan"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="footer-fb"
+        >
+          <i class="fi fi-br-facebook"></i>
+          MMP Marketing on Facebook
+        </a>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="fc-col">
+        <h4 class="fc-title">Quick Links</h4>
+        <ul class="fc-list">
+          {links.map(l => (
+            <li>
+              <a href={l.href}>
+                <i class="fi fi-rr-angle-small-right"></i>
+                {l.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Brand Partners -->
+      <div class="fc-col">
+        <h4 class="fc-title">Brand Partners</h4>
+        <ul class="fc-list brands-col">
+          {brands.map(b => (
+            <li>
+              <i class="fi fi-sr-check-circle"></i>
+              {b}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="fc-col">
+        <h4 class="fc-title">Contact Us</h4>
+        <div class="fc-contact">
+          <div class="fci">
+            <i class="fi fi-sr-map-marker"></i>
+            <span>1st Floor Red-C Building,<br />Tambo Highway,<br />Iligan City, Northern Mindanao</span>
+          </div>
+          <div class="fci">
+            <i class="fi fi-sr-phone-call"></i>
+            <div>
+              <span>0993</span>
+              <span>09654239833</span>
+            </div>
+          </div>
+          <div class="fci">
+            <i class="fi fi-sr-clock"></i>
+            <span>Mon – Sat · 8AM – 6PM</span>
+          </div>
+          <a
+            href="https://www.facebook.com/mmp.iligan"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="fci fci-fb"
+          >
+            <i class="fi fi-br-facebook"></i>
+            <span>facebook.com/mmp.iligan</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Divider -->
+    <div class="footer-divider"></div>
+
+    <!-- Bottom bar -->
+    <div class="footer-bottom">
+      <p>&copy; {new Date().getFullYear()} MMP Appliances Trading. All rights reserved.</p>
+      <div class="footer-bottom-right">
+        <span class="mmp-mark fbs-mark">
+          <span class="l1">M</span><span class="l2">M</span><span class="l3">P</span>
+        </span>
+        <span class="fbs-city">Iligan City, Philippines</span>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+<style>
+  .footer { margin-top: 0; }
+
+  /* ── Wave: transitions from white (Contact bg) to navy ── */
+  .footer-wave {
+    display: block;
+    line-height: 0;
+    overflow: hidden;
+    background: var(--bg); /* must match the section directly above */
+  }
+  .footer-wave svg { width: 100%; height: 72px; display: block; }
+
+  /* ── Footer body ── */
+  .footer-body {
+    background: var(--navy);
+    padding: 0 2.5rem 2rem;
+    position: relative;
+  }
+
+  /* Thin red accent at top of footer body */
+  .footer-accent {
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, transparent 5%, var(--red) 30%, var(--red) 70%, transparent 95%);
+    margin-bottom: 3.5rem;
+    opacity: 0.7;
+  }
+
+  /* ── 4-column grid ── */
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.8fr 1fr 1fr 1.4fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+  }
+
+  /* ── Brand column ── */
+  .footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .fl-mark { font-size: 2.8rem; letter-spacing: 2px; }
+  .fl-mark .l1, .fl-mark .l3 { color: #fff; }
+  .fl-mark .l2 { color: var(--red); }
+
+  .footer-logo-text {
+    display: flex;
+    flex-direction: column;
+  }
+  .flt-top {
+    font-family: var(--font-condensed);
+    font-weight: 900;
+    font-size: 0.88rem;
+    letter-spacing: 5px;
+    color: #fff;
+    line-height: 1.25;
+  }
+  .flt-bottom {
+    font-family: var(--font-condensed);
+    font-weight: 700;
+    font-size: 0.68rem;
+    letter-spacing: 5px;
+    color: rgba(255,255,255,0.4);
+    line-height: 1.25;
+  }
+
+  .footer-desc {
+    font-size: 0.855rem;
+    color: rgba(255,255,255,0.42);
+    font-weight: 300;
+    line-height: 1.8;
+    margin-bottom: 1.4rem;
+    max-width: 280px;
+  }
+
+  .footer-fb {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.5rem 1rem;
+    background: rgba(24,119,242,0.12);
+    border: 1px solid rgba(24,119,242,0.28);
+    border-radius: 4px;
+    color: #6aA8F8;
+    text-decoration: none;
+    font-family: var(--font-condensed);
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: background 0.2s, border-color 0.2s;
+  }
+  .footer-fb:hover {
+    background: rgba(24,119,242,0.22);
+    border-color: rgba(24,119,242,0.5);
+  }
+  .footer-fb i { font-size: 0.95rem; }
+
+  /* ── Column titles ── */
+  .fc-title {
+    font-family: var(--font-condensed);
+    font-size: 0.66rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--red);
+    font-weight: 700;
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.55rem;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+
+  /* ── Quick links ── */
+  .fc-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .fc-list a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    text-decoration: none;
+    font-size: 0.855rem;
+    color: rgba(255,255,255,0.48);
+    font-weight: 300;
+    transition: color 0.2s, padding-left 0.2s;
+  }
+  .fc-list a i { font-size: 0.65rem; color: rgba(200,16,46,0.7); flex-shrink: 0; }
+  .fc-list a:hover { color: #fff; padding-left: 3px; }
+
+  /* ── Brand partners list ── */
+  .brands-col li {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.855rem;
+    color: rgba(255,255,255,0.48);
+    font-weight: 300;
+    margin-bottom: 0.5rem;
+  }
+  .brands-col li i { font-size: 0.6rem; color: rgba(200,16,46,0.7); flex-shrink: 0; }
+
+  /* ── Contact column ── */
+  .fc-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .fci {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.7rem;
+  }
+  .fci i {
+    font-size: 0.95rem;
+    color: rgba(200,16,46,0.75);
+    flex-shrink: 0;
+    margin-top: 0.15rem;
+  }
+  .fci span, .fci div {
+    font-size: 0.83rem;
+    color: rgba(255,255,255,0.48);
+    font-weight: 300;
+    line-height: 1.65;
+  }
+  .fci div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.08rem;
+  }
+
+  .fci-fb {
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+  .fci-fb:hover { opacity: 0.85; }
+  .fci-fb i { color: #6aA8F8; }
+  .fci-fb span { color: #6aA8F8 !important; }
+
+  /* ── Divider ── */
+  .footer-divider {
+    max-width: 1200px;
+    margin: 0 auto 1.5rem;
+    height: 1px;
+    background: rgba(255,255,255,0.07);
+  }
+
+  /* ── Bottom bar ── */
+  .footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .footer-bottom p {
+    font-size: 0.76rem;
+    color: rgba(255,255,255,0.22);
+    font-weight: 300;
+  }
+
+  .footer-bottom-right {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+  }
+
+  .fbs-mark { font-size: 1.15rem; letter-spacing: 2px; opacity: 0.45; }
+  .fbs-mark .l1, .fbs-mark .l3 { color: #fff; }
+  .fbs-mark .l2 { color: var(--red); }
+
+  .fbs-city {
+    font-family: var(--font-condensed);
+    font-size: 0.65rem;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.18);
+    font-weight: 600;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 1024px) {
+    .footer-inner {
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+    }
+    .fc-brand { grid-column: 1 / -1; }
+  }
+
+  @media (max-width: 600px) {
+    .footer-body { padding: 0 1.5rem 1.5rem; }
+    .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+    .footer-bottom { flex-direction: column; align-items: flex-start; }
+    .footer-desc { max-width: none; }
+  }
+</style>
